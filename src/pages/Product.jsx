@@ -116,18 +116,10 @@ const Product = () => {
         </div>
         <div className="flex flex-col border px-6 py-6 gap-4 text-sm text-gray-500">
           <p>
-            Discover the latest trends in fashion with our exclusive collection
-            of clothing, accessories, and footwear. Whether you're looking for
-            casual wear, office attire, or something for a special occasion,
-            we've got you covered. Shop with ease, explore our handpicked
-            categories, and enjoy fast shipping, secure payments, and excellent
-            customer service. Redefine your style with our premium-quality
-            products, crafted to perfection for every occasion.
+            Discover a rich variety of delicious dishes prepared with fresh ingredients and authentic flavors. From classic favorites to chef’s special recipes, every item on our menu is crafted to deliver great taste and quality. Whether you’re dining in, ordering for takeaway, or choosing home delivery, we ensure a satisfying food experience every time.
           </p>
           <p>
-            Explore trendy fashion essentials with our exclusive collection of
-            clothing, accessories, and footwear. Shop the latest styles, enjoy
-            secure payments, and fast delivery for a hassle-free experience.
+            Enjoy hygienic preparation, quick service, and a warm dining atmosphere. Perfect for family meals, casual outings, and special gatherings.
           </p>
         </div>
       </div>

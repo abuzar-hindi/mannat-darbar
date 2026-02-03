@@ -3,6 +3,7 @@ import Title from "../components/Title";
 import CartTotal from "../components/CartTotal";
 import { ShopContext } from "../contexts/ShopContext";
 import QRCode from "qrcode";
+import { assets } from "../assets/assets";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod");
@@ -51,13 +52,13 @@ const PlaceOrder = () => {
   const sendWhatsAppOrder = (orderId, paymentStatus) => {
     let message = `🍽️ *New Order*\n\n`;
 
-    message += `🆔 Order ID: ${orderId}\n`;
-    message += `🆔 Order Type: ${orderType}\n`;
-    message += `💳 Payment: ${paymentStatus}\n\n`;
+    message += `*Order ID:* ${orderId}\n`;
+    message += `*Order Type:* ${orderType}\n`;
+    message += `Payment: ${paymentStatus}\n\n`;
 
-    message += `👤 Name: ${formData.firstName} ${formData.lastName}\n`;
-    message += `📞 Phone: ${formData.phone}\n`;
-    message += `📍 Address: ${formData.street}, ${formData.city}, ${formData.state}\n\n`;
+    message += `*Name:* ${formData.firstName} ${formData.lastName}\n`;
+    message += `*Phone:* ${formData.phone}\n`;
+    message += `*Address:* ${formData.street}, ${formData.city}, ${formData.state}\n\n`;
 
     message += `🛒 *Items:*\n`;
 
@@ -315,13 +316,6 @@ const PlaceOrder = () => {
 
                 {showQR && (
                   <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                    <button
-                      onClick={() => setShowQR(false)}
-                      className="relative top-0 right-0"
-                    >
-                      X
-                    </button>
-
                     <div className="bg-white p-6 rounded-lg w-80 text-center">
                       <h2 className="text-lg font-semibold mb-2">Scan & Pay</h2>
 
@@ -346,9 +340,15 @@ const PlaceOrder = () => {
                           setShowQR(false);
                           sendWhatsAppOrder(currentOrderId, "UPI Paid (QR)");
                         }}
-                        className="bg-green-600 text-white px-6 py-2 rounded"
+                        className="bg-orange-400 w-full text-white px-6 py-2 rounded"
                       >
                         I’VE PAID
+                      </button>
+                      <button
+                        onClick={() => setShowQR(false)}
+                        className="relative right-0 border mt-2 w-full px-6 py-2 rounded hover:bg-gray-200"
+                      >
+                        Cancel
                       </button>
                     </div>
                   </div>
