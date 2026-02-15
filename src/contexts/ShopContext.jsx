@@ -45,6 +45,17 @@ const ShopContextProvider = (props) => {
 
     // ✅ Save to localStorage
     localStorage.setItem("cartItems", JSON.stringify(cartData));
+
+    // Show a small toast to confirm the product was added (name + type)
+    try {
+      const product = products.find((p) => p._id === itemId);
+      if (product) {
+        const productName = product.name || product.title || "Product";
+        toast.success(`${productName} (${type}) added to cart`);
+      }
+    } catch (error) {
+      // ignore toast errors
+    }
   };
 
   useEffect(() => {

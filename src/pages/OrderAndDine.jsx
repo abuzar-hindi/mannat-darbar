@@ -22,8 +22,6 @@ const Collection = () => {
     localStorage.getItem("orderType") || "Home Delivery",
   );
 
-
-
   // dynamically compute subcategories available for the selected top-level category(ies)
   const availableSubcategories = useMemo(() => {
     const s = new Set();
@@ -319,13 +317,6 @@ const Collection = () => {
             <div>
               <div className="flex items-center gap-3">
                 <Title text1={"ORDER &"} text2={"DINE"} />
-                <button
-                  onClick={() => setShowFilter((s) => !s)}
-                  className="sm:hidden text-sm text-orange-500 ml-2 px-3 py-1 rounded-lg border border-orange-200 bg-orange-50"
-                  aria-label="Toggle filters"
-                >
-                  Filters
-                </button>
               </div>
 
               <p className="text-sm text-gray-500 mt-1">
@@ -350,7 +341,7 @@ const Collection = () => {
                     setOrderType("Home Delivery");
                     localStorage.setItem("orderType", "Home Delivery");
                   }}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                  className={`px-4 md:py-2 rounded-full text-sm font-medium transition ${
                     orderType === "Home Delivery"
                       ? "bg-gradient-to-r from-orange-400 to-orange-500 text-white shadow"
                       : "text-gray-700 hover:bg-white"
@@ -364,10 +355,10 @@ const Collection = () => {
                     setOrderType("Pick-up");
                     localStorage.setItem("orderType", "Pick-up");
                   }}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                  className={`px-4 md:py-2 rounded-full text-sm font-medium transition leading-tight ${
                     orderType === "Pick-up"
                       ? "bg-gradient-to-r from-orange-400 to-orange-500 text-white shadow"
-                      : "text-gray-700 hover:bg-white"
+                      : "text-gray-700 hover:bg-white leadings-tight"
                   }`}
                 >
                   Pick-up

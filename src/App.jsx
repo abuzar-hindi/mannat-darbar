@@ -16,12 +16,14 @@ import Searchbar from "./components/Searchbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReserveTable from "./components/ReserveTable";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const App = () => {
   return (
     <div className="px-4">
       <ToastContainer />
+      <ScrollToTop />
       <Navbar />{" "}
       {/* firstly, this component will render, then go to route '/' means Home.jsx, then go to Home.jsx */}
       <Searchbar />

@@ -34,7 +34,7 @@ const Product = () => {
       <div className="flex flex-col sm:flex-row gap-12 sm:gap-12">
         {/* ------------------------- Product Image -------------------------  */}
         <div className="flex-1 flex flex-col-reverse sm:flex-row gap-3 ">
-          <div className="flex sm:flex-col overflow-x-auto justify-evenly sm:justify-normal sm:w-[18.7%] w-full">
+          <div className="flex sm:flex-col overflow-x-auto  gap-2 sm:w-[18.7%] w-full">
             {productData.images?.map((item, index) => (
               <img
                 onClick={() => setImage(item)}
@@ -47,7 +47,7 @@ const Product = () => {
           </div>
 
           <div className="w-full sm:w-[80%]">
-            <img className="w-full md:h-[500px]" src={image} alt="" />
+            <img className="w-full h-[300px] object-cover md:h-[500px]" src={image} alt="" />
           </div>
         </div>
 
